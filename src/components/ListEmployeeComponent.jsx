@@ -5,7 +5,7 @@ const ListComponent = () =>{
     const [employee, setEmployee]=useState([])
     useEffect( () => {
         listEmployees().then((response) => {
-            setEmployee(response)
+            setEmployee(response.data)
         }).catch((error) => console.log(error))
     }
     ,[])
@@ -24,8 +24,8 @@ const ListComponent = () =>{
                 <tbody>
                      {
                         employee.map( employee =>
-                            <tr key={employee.employeeId}>
-                                <td>{employee.employeeId}</td>
+                            <tr key={employee.id}>
+                                <td>{employee.id}</td>
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>

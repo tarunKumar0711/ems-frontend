@@ -9,3 +9,9 @@ export const listDepartments = () =>{
         axios.get(REST_API_BASE_URL)
     )
 }
+
+export const createDepartment = (department) =>{
+    return(
+        axios.post(REST_API_BASE_URL,department)
+    )
+}

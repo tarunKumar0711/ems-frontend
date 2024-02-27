@@ -37,7 +37,7 @@ const ListComponent = () =>{
     return (
         <div className="container">
             <h2 className="text-center"> List of Employees </h2>
-            <button className="btn btn-primary" onClick={addNewEmployee}> Add Employee</button>
+            <button className="btn btn-primary" onClick={addNewEmployee} style={{margin:'10px'}}> Add Employee</button>
             <br></br>
             <table className="table table-striped table-bordered">
                 <thead>

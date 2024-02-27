@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { listDepartments } from "../services/DepartmentService"
+import { useNavigate } from "react-router-dom"
 
 const DepartmentListComponent = () =>{
 
     const [departments, setDepartment] = useState([])
+    const navigator = useNavigate()
 
     useEffect(
         ()=>{
@@ -19,10 +21,19 @@ const DepartmentListComponent = () =>{
         })
     }
 
+    function addDepartment(){
+        navigator('/addDepartment')
+    }
+
     return(
         <>
             <div className="container">
+                <br></br>
+                <br></br>
                 <h2 className="text-center">Department List</h2>
+                
+                <button className="btn btn-primary" style={{margin:'10px'}} onClick={addDepartment}>Add Department</button>
+                
                 <table className="table table-striped table-bordered">
                     <thead>
                         <tr>

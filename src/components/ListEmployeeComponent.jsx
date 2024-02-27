@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 const ListComponent = () =>{
 
     const [employee, setEmployee]=useState([])
+    
     useEffect( () => {
         getAllEmployees()
     },[])

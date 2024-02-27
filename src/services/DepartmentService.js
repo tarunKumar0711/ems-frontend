@@ -27,3 +27,9 @@ export const getDepartment = (departmentId) =>{
         axios.get(REST_API_BASE_URL+'/'+departmentId)
     )
 }
+
+export const removeDepartment = (departmentId) => {
+    return(
+        axios.delete(REST_API_BASE_URL+'/'+departmentId)
+    )
+}

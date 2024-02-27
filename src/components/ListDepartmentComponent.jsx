@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { listDepartments } from "../services/DepartmentService"
+import { listDepartments} from "../services/DepartmentService"
 import { useNavigate } from "react-router-dom"
 
 const DepartmentListComponent = () =>{
@@ -25,6 +25,9 @@ const DepartmentListComponent = () =>{
         navigator('/addDepartment')
     }
 
+    function updateDepartment(id){
+        navigator(`/edit-department/${id}`)
+    }
     return(
         <>
             <div className="container">
@@ -40,6 +43,7 @@ const DepartmentListComponent = () =>{
                             <th>Department Id</th>
                             <th>Department Name</th>
                             <th>Department Description</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,6 +54,9 @@ const DepartmentListComponent = () =>{
                                         <td>{department.id}</td>
                                         <td>{department.departmentName}</td>
                                         <td>{department.departmentDescription}</td>
+                                        <td>
+                                            <button className="btn btn-info" onClick={() => updateDepartment(department.id)}>Update</button>
+                                        </td>
                                     </tr>
                                 )
                             })
